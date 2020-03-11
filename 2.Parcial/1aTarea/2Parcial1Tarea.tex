@@ -1,0 +1,100 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amssymb, amsmath}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{dsfont}
+\usepackage[margin=1.3cm,
+vmargin={1.3cm,1.3cm},
+includefoot]{geometry}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{tocloft}
+\usepackage{upgreek}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{tcolorbox}
+\usepackage{color}
+\usepackage{tikz}
+\tcbuselibrary{skins,breakable}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{\textbf{Facultad de Ciencias, UNAM}\\ \thepage}
+
+\newcommand{\A}{\mathcal{A}}
+
+\newcommand{\V}{\mathds{V}}
+
+\newcommand{\W}{\mathds{W}}
+
+\newcommand{\F}{\mathds{F}}
+
+\newcommand{\tq}{ \quad \cdot  \backepsilon \cdot \quad }
+
+\newcommand{\ld}{\lim\limits_{x \to 0^{+}}}
+
+\newcommand{\li}{\lim\limits_{x \to 0^{-}}}
+
+\newcommand{\la}{\lim\limits_{x \to a}}
+
+\newcommand{\R}{\mathds{R}}
+
+\renewcommand{\*}{\cdot}
+
+\newcommand{\ExiEscuela}{\textbf{Facultad de Ciencias, UNAM}}
+
+\newtcolorbox{ejercicio}[1]{beamer,colback=white!90!white, colframe=black, title=Ejercicio #1}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\newtheorem{theorem}{Teorema}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+
+\begin{document}
+		\begin{titlepage}
+	\begin{center}
+		\textbf{Universidad Nacional Autónoma de México}\\
+		\textbf{Facultad de Ciencias} \\
+		\textit{Álgebra Superior II} \\[1mm]
+		\hrulefill \\
+		\large{$ 2^{do} $ Parcial Tarea 1 }\\
+		Kevin Ariel Merino Peña  317031326\\
+		\today\\
+		\hrulefill \\
+	\end{center}
+	\let\newpage\relax% Avoid following page break
+	
+\end{titlepage}
+2. Sea $ X $ un conjunto y sea $ \mathcal{A} = \mathcal{P}(X) $ su conjunto potencia. Definimos las operaciones $ + $ y $ \* $ en $ \mathcal{A} $ como 
+\[ B + C = B \vartriangle C \quad \text{y} \quad B \* C = B \cap C \]
+Demuestra que $ (\mathcal{A}, +, \*) $ es un anillo conmutativo
+\textit{(Puedes utilizar, sin demostrarlo que la diferencia simétrica $ \vartriangle $ es asociativa)}
+
+\begin{definition}
+	Sea $ (A, +, \*) $ definimos a como un anillo si cumple
+	\begin{itemize}
+	\item Asociatividad para la suma
+	\[ \forall a, b, c \in \A \qquad a+(b+c) = (a+b)+c \]
+	\item Conmutatividad para la suma
+	\[ \forall a, b \in \A \qquad a + b = b + a \]
+	\item Existencia del neutro aditivo
+	\[ \forall a \in \A \quad \exists \hat{0} \in \A \tq a + \hat{0} = a \]
+	\item Existencia de inversos aditivos
+	\[ \forall a \in A \quad \exists \hat{a} \tq a + \hat{a} = 0 \]
+	\item Existencia del neutro multiplicativo
+	\[ \exists \hat{1} \in \A \tq \forall a \in \A \quad a \* \hat{1} = a = \hat{1} \* a \]
+\end{itemize}
+\end{definition}
+\end{document}
