@@ -20,6 +20,7 @@ includefoot]{geometry}
 \usepackage{tcolorbox}
 \usepackage{color}
 \usepackage{tikz}
+\input{longdiv.tex}
 \tcbuselibrary{skins,breakable}
 \pagestyle{fancy}
 
@@ -34,6 +35,8 @@ includefoot]{geometry}
 \newcommand{\W}{\mathds{W}}
 
 \newcommand{\F}{\mathds{F}}
+
+\newcommand{\dsim}{\vartriangle}
 
 \newcommand{\tq}{ \quad \cdot  \backepsilon \cdot \quad }
 
@@ -77,6 +80,7 @@ includefoot]{geometry}
 	\let\newpage\relax% Avoid following page break
 	
 \end{titlepage}
+
 2. Sea $ X $ un conjunto y sea $ \mathcal{A} = \mathcal{P}(X) $ su conjunto potencia. Definimos las operaciones $ + $ y $ \* $ en $ \mathcal{A} $ como 
 \[ B + C = B \vartriangle C \quad \text{y} \quad B \* C = B \cap C \]
 Demuestra que $ (\mathcal{A}, +, \*) $ es un anillo conmutativo
@@ -84,7 +88,7 @@ Demuestra que $ (\mathcal{A}, +, \*) $ es un anillo conmutativo
 
 \begin{definition}
 	$ (A, +, \*) $ es un anillo si cumple
-	\begin{itemize}
+	\begin{enumerate}
 	\item Asociatividad para la suma
 	\[ \forall a, b, c \in \A \qquad a+(b+c) = (a+b)+c \]
 	\item Conmutatividad para la suma
@@ -101,14 +105,53 @@ Demuestra que $ (\mathcal{A}, +, \*) $ es un anillo conmutativo
 	\[ \forall a, b, c \in \A \quad a \* (b + c) = a \* b + a \* c \]
 	\item Distributividad por la derecha
 	\[ \forall x, y, z \in \A \quad (x + y) \* z = x \* z + y \* z \]
-\end{itemize}
+\end{enumerate}
 \end{definition}
 Sean $ A, B, C \in \A $
 \[ A + (B + C) \] P.d $  A + (B + C) = (A+B) +C $
-Sabemos que $ A + (B + C) =  $
 \begin{align*}
-	
+	A + (B + C) & = A +(B \dsim C) && \text{Por definición de + en $ \A $}\\
+	A + (B \dsim C) &= A \dsim (B \dsim C) && \text{Esto sginifica $ + $}\\
+	A \dsim (B \dsim C) &= (A \dsim B) \dsim C &&\text{Porque $ \dsim $ es asociativa}\\
+	(A \dsim B) \dsim C &= (A + B) + C && \text{Por definición de +, de nuevo}
 \end{align*}
+\begin{center}
+	$ \therefore + $ es asociativa en $ \A $
+\end{center}
+Sean $ A, B \in \A $
+\[ A + B \] P.d $  A + B = B+A $
+\begin{align*}
+	A + B &= A \dsim B && \text{Por definición de $ + $ en $ A $}\\
+	A \dsim B &= (A - B) \cup (B - A) && \text{Por definición de $ \dsim $}\\
+	(A - B) \cup (B - A) &= (B - A) \cup (A - B)  && \text{Porque $ \cup $ es conmitativa}\\
+	(B - A) \cup (A - B) &= B \dsim A  && \text{Por definición de $ \dsim $ }\\
+	B \dsim A &= B + A  && \text{Por definición de $ + $ }\\
+\end{align*}
+\begin{center}
+	$ \therefore + $ es conmutativa en $ \A $
+\end{center}
+Proponemos $ \hat{0} = \varnothing $, entonces\\
+Sea $ A \in \A $, Pd. $ A + \varnothing = A $
+\begin{align*}
+	A + \varnothing &= A \dsim \varnothing && \text{Por definición de +}\\
+	A \dsim \varnothing &= (A - \varnothing) \cup(\varnothing - A) && \text{Por definición de $ \dsim $}\\
+	(A - \varnothing) \cup(\varnothing - A) &= A \cup \varnothing && \text{Obs. $ A - \varnothing = A,\quad \varnothing - A = \varnothing $}\\
+	A \cup \varnothing &= A && \text{Por propiedades del vacío}
+\end{align*}
+\begin{center}
+	$ \therefore \varnothing $ es el neutro aditivo en $ \A $
+\end{center}
+Sea $ A \in A $ Pd. $ A + \hat{A} = \varnothing $\\
+Proponemos $ \hat{A} = A $
+\begin{align*}
+	A + A &= A\dsim A && \text{Definición de + en $ \A $}\\
+	A \dsim A &= (A- A)\cup(A-A) && \text{Definición de $ \dsim $}\\
+	(A- A)\cup(A-A) &= \varnothing && \text{Por propiedades de  $ \dsim $}\\
+\end{align*}
+\begin{center}
+	$ \therefore A $ es el inverso aditivo de $ A $ en $ \A $
+\end{center}
+
 \begin{definition}
 	En $ (\A, +, \*) $ un anillo, si $ \* $ es asociativo entonces decimos que es anillo conmutativo
 \end{definition}
