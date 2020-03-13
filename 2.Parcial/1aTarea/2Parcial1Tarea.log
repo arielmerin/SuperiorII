@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.20)  11 MAR 2020 09:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.20)  12 MAR 2020 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1124,24 +1124,25 @@ LaTeX Info: Redefining \% on input line 7.
 Here is how much of TeX's memory you used:
  19129 strings out of 492982
  378193 string characters out of 6134896
- 563170 words of memory out of 5000000
+ 565170 words of memory out of 5000000
  22322 multiletter control sequences out of 15000+600000
  36793 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,5n,83p,835b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/
 share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msbm10.pfb>
-Output written on 2Parcial1Tarea.pdf (1 page, 117793 bytes).
+ic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 2Parcial1Tarea.pdf (1 page, 137477 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

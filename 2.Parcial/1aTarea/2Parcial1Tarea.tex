@@ -83,18 +83,34 @@ Demuestra que $ (\mathcal{A}, +, \*) $ es un anillo conmutativo
 \textit{(Puedes utilizar, sin demostrarlo que la diferencia simétrica $ \vartriangle $ es asociativa)}
 
 \begin{definition}
-	Sea $ (A, +, \*) $ definimos a como un anillo si cumple
+	$ (A, +, \*) $ es un anillo si cumple
 	\begin{itemize}
 	\item Asociatividad para la suma
 	\[ \forall a, b, c \in \A \qquad a+(b+c) = (a+b)+c \]
 	\item Conmutatividad para la suma
 	\[ \forall a, b \in \A \qquad a + b = b + a \]
 	\item Existencia del neutro aditivo
-	\[ \forall a \in \A \quad \exists \hat{0} \in \A \tq a + \hat{0} = a \]
+	\[ \exists \hat{0} \in \A \tq \forall a \in \A \quad a + \hat{0} = a \]
 	\item Existencia de inversos aditivos
-	\[ \forall a \in A \quad \exists \hat{a} \tq a + \hat{a} = 0 \]
+	\[ \forall a \in A \quad \exists \hat{a} \tq a + \hat{a} = \hat{0} \]
+	\item Asociatividad para el producto
+	\[ \forall a, b, c \in \A \quad a \* (b \* c) = (a \* b )\* c \]
 	\item Existencia del neutro multiplicativo
 	\[ \exists \hat{1} \in \A \tq \forall a \in \A \quad a \* \hat{1} = a = \hat{1} \* a \]
+	\item Distributividad por la izquierda
+	\[ \forall a, b, c \in \A \quad a \* (b + c) = a \* b + a \* c \]
+	\item Distributividad por la derecha
+	\[ \forall x, y, z \in \A \quad (x + y) \* z = x \* z + y \* z \]
 \end{itemize}
 \end{definition}
+Sean $ A, B, C \in \A $
+\[ A + (B + C) \] P.d $  A + (B + C) = (A+B) +C $
+Sabemos que $ A + (B + C) =  $
+\begin{align*}
+	
+\end{align*}
+\begin{definition}
+	En $ (\A, +, \*) $ un anillo, si $ \* $ es asociativo entonces decimos que es anillo conmutativo
+\end{definition}
+3. Demuestra que el conjunto de matrices de 3 x 3 con coeficientes en $ \mathbb{Z} $ (denotado $ M_{3x3} $)
 \end{document}
