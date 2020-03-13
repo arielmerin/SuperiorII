@@ -30,6 +30,30 @@ includefoot]{geometry}
 
 \newcommand{\A}{\mathcal{A}}
 
+\newcommand{\Ceros}{\begin{pmatrix}
+		0 & 0 & 0\\
+		0 & 0 & 0\\
+		0 & 0 & 0 
+\end{pmatrix}}
+
+\newcommand{\Nmat}{\begin{pmatrix}
+		j & k & l\\
+		m & n & o\\
+		q & p & r\\
+\end{pmatrix}}
+
+\newcommand{\Pmat}{\begin{pmatrix}
+		\alpha & \beta & \gamma\\
+		\epsilon & \eta & \theta\\
+		\xi & \omega & \delta
+\end{pmatrix}}
+
+\newcommand{\Mmat}{\begin{pmatrix}
+		a & b & c\\
+		d & e & f\\
+		g & h & i
+\end{pmatrix}}
+
 \newcommand{\V}{\mathds{V}}
 
 \newcommand{\W}{\mathds{W}}
@@ -46,7 +70,11 @@ includefoot]{geometry}
 
 \newcommand{\la}{\lim\limits_{x \to a}}
 
+\newcommand{\mtt}{M_{3x3}(\mathds{Z})}
+
 \newcommand{\R}{\mathds{R}}
+
+\newcommand{\Z}{\mathds{Z}}
 
 \renewcommand{\*}{\cdot}
 
@@ -151,9 +179,221 @@ Proponemos $ \hat{A} = A $
 \begin{center}
 	$ \therefore A $ es el inverso aditivo de $ A $ en $ \A $
 \end{center}
-
+Sean $ A,B,C \in \A$\\
+$ A \*( C \* D ) $ Pd. $  A \*( C \* D ) = (A \* C) \* D $
+\begin{align*}
+	A\*(C\*D) &= A\*(C \cap D) && \text{Por definición de $ \* $}\\
+	A\*(C \cap D) &= A\cap(C \cap D) && \text{Por definición de $ \* $}\\
+	A\cap(C \cap D) &= (A\cap C)\cap D && \text{Porque $ \cap $ es asosciativa}\\
+	(A\cap C)\cap D &= (A \* C) \cap D && \text{Por definición de $ \* $}\\
+	(A \* C) \cap D &= (A \* C)\* D  && \text{Por definición de $ \* $}\\
+\end{align*}
+\begin{center}
+	$ \therefore \* $ es asociativo en $ \A $
+\end{center}
+Proponemos $ \hat{1} = A $\\
+Sea $ A \in \A $ Pd. $ A \* A = A = A \* A $
+\begin{align*}
+	 A \* A &= A \cup A && \text{Por definición de $ \* $}\\
+	 A \cup A &= A  && \text{Por idempotencia de $ \cup $}\\
+	 \\
+\end{align*}
+\begin{center}
+	La otra igualdad se prueba exactamente de la misma manera,
+	$ \therefore A $ es el inverso multiplicativo en $ \A $
+\end{center}
+Sean $ A, B, C \in \A $\\
+Pd. $ A \* (B + C) = A\*C + A\*D $
+\begin{align*}
+	A \* (B + C) & = A \* (B \dsim C) && \text{Por definición de $ + $}\\
+	A \* (B \dsim C) & = A \cap(B \dsim C)  && \text{Por definición de $ \*$}\\
+	A \cap(B \dsim C) & = (A \cap B) \dsim (A \cap D) && \text{Por porpiedades de $ \cap, \dsim $}\\
+	(A \cap B) \dsim (A \cap D) & = (A \* B) \dsim (A \* D) && \text{Por definición de $ \*$}\\
+	(A \* B) \dsim (A \* D) & = (A \* B) + (A \* D)  && \text{Por definición de $ +$}\\
+\end{align*}
+\begin{center}
+	$ \therefore $ se cumple 7
+\end{center}
+Sean $ X, Y, Z \in A $\\
+Pd. $ (X+Y)\*Z = X\*Z + Y\*Z $
+\begin{align*}
+	(X+Y)\*Z &= (X \dsim Y)\*Z && \text{Por definición de $ + $}\\
+	(X \dsim Y)\*Z &= (X \dsim Y)\cap Z && \text{Por definición de $ \* $}\\
+	(X \dsim Y)\cap Z  &= (X\cap Z) \dsim (Y\cap Z)  && \text{Por propiedades de $ \cap, \dsim$}\\
+	(X\cap Z) \dsim (Y\cap Z)  &=  (X\* Z) \dsim (Y\* Z) && \text{Por definición de $ \*$}\\
+	(X\* Z) \dsim (Y\* Z) &= (X\* Z) + (Y\* Z) && \text{Por definición de $ + $}
+\end{align*}
+\begin{center}
+	$ \therefore $ se cumple 8\\
+	$ \therefore \quad (\A, +, \*)$ es un anillo
+\end{center}
 \begin{definition}
 	En $ (\A, +, \*) $ un anillo, si $ \* $ es asociativo entonces decimos que es anillo conmutativo
 \end{definition}
-3. Demuestra que el conjunto de matrices de 3 x 3 con coeficientes en $ \mathbb{Z} $ (denotado $ M_{3x3} $)
+Sean $ A,B \in \A $\\
+Pd. $ A\*B = B\* A $
+\begin{align*}
+	A\*B &= A \cap B && \text{Por definición de $ \* $}\\
+	A \cap B &= B \cap A  && \text{Porque $ \cap $ es conmutativa}\\
+	B \cap A &= B \* A  && \text{Por definición de $ \* $}
+\end{align*}
+\begin{center}
+	$ \therefore \* $ es conmutativo en $ \A $
+\end{center}
+3. Demuestra que el conjunto de matrices de 3 x 3 con coeficientes en $ \mathbb{Z} $ (denotado $ M_{3x3}(\Z) $) forma un anillo con la suma y producto de matrices definidas en la tarea 2. Con un ejemplo muestra que este anillo no cumple la ley de cancelación del producto.\\
+Sean $ M, N, P \in \mtt $, $ M = \begin{pmatrix}
+a & b & c\\
+d & e & f\\
+g & h & i
+\end{pmatrix} , N = \begin{pmatrix}
+ j & k & l\\
+ m & n & o\\
+ q & p & r\\
+\end{pmatrix}, P = \begin{pmatrix}
+\alpha & \beta & \gamma\\
+\epsilon & \eta & \theta\\
+\xi & \omega & \delta
+\end{pmatrix}$\\
+Pd. $ \Mmat + \left(\Nmat + \Pmat \right) = \left(\Mmat + \Nmat \right) + \Pmat $
+\begin{align*}
+	\Mmat + \left(\Nmat + \Pmat \right) & = \Mmat + \left(\begin{pmatrix}
+		j + \alpha & k + \beta & l + \gamma \\
+		m + \epsilon & n + \eta & o + \theta \\
+		p + \xi & q + \omega & r + \delta 
+	\end{pmatrix} \right) && \text{Por definición de $ + $}\\
+	\Mmat + \left(\begin{pmatrix}
+	j + \alpha & k + \beta & l + \gamma \\
+	m + \epsilon & n + \eta & o + \theta \\
+	p + \xi & q + \omega & r + \delta 
+	\end{pmatrix} \right) & = \begin{pmatrix}
+	a + j + \alpha & b+k + \beta &c+ l + \gamma \\
+	d+m + \epsilon & e+n + \eta & f+o + \theta \\
+	g+p + \xi & h+q + \omega & i+r + \delta 
+	\end{pmatrix} && \text{Por definición de +}\\
+	\begin{pmatrix}
+	a + j + \alpha & b+k + \beta &c+ l + \gamma \\
+	d+m + \epsilon & e+n + \eta & f+o + \theta \\
+	g+p + \xi & h+q + \omega & i+r + \delta 
+	\end{pmatrix} &= \begin{pmatrix}
+	(a + j) + \alpha & (b+k) + \beta & (c+ l) + \gamma \\
+	(d+m) + \epsilon & (e+n) + \eta & (f+o) + \theta \\
+	(g+p) + \xi & (h+q) + \omega & (i+r) + \delta 
+	\end{pmatrix} &&\text{Pues + en $ \Z $ es asociativa}\\
+	\begin{pmatrix}
+	(a + j) + \alpha & (b+k) + \beta & (c+ l) + \gamma \\
+	(d+m) + \epsilon & (e+n) + \eta & (f+o) + \theta \\
+	(g+p) + \xi & (h+q) + \omega & (i+r) + \delta 
+	\end{pmatrix} &= \begin{pmatrix}
+	a + j & b+k & c+ l\\
+	d+m & e+n & f+o\\
+	g+p & h+q & i+r 
+	\end{pmatrix} + \Pmat &&\text{Por def de $ + $ en $ \mtt $}\\
+	\begin{pmatrix}
+	a + j & b+k & c+ l\\
+	d+m & e+n & f+o\\
+	g+p & h+q & i+r 
+	\end{pmatrix} + \Pmat & = \left(\Mmat + \Nmat \right) + \Pmat &&\text{Por defde $ + $ en $ \mtt $}
+\end{align*}
+\begin{center}
+	$ \therefore +$ es asociativa en $ \mtt $
+\end{center}
+Sean $ M, N \in \mtt $
+$$ M = \Mmat, N = \Nmat $$ Por demostrar $ \Mmat + \Nmat = \Nmat + \Mmat $
+\begin{align*}
+	\Mmat + \Nmat &= \begin{pmatrix}
+	a + j & b+k & c+ l\\
+	d+m & e+n & f+o\\
+	g+p & h+q & i+r 
+	\end{pmatrix} && \text{Por definición de +}\\
+	\begin{pmatrix}
+	a + j & b+k & c+ l\\
+	d+m & e+n & f+o\\
+	g+p & h+q & i+r 
+	\end{pmatrix} & = \begin{pmatrix}
+	j+a & k+b & l+c\\
+	m+d & n+e & o+f\\
+	p+g & q+h & r+i 
+	\end{pmatrix} && \text{Porque en $ \Z$, + es conmutativa}\\
+	\begin{pmatrix}
+	j+a & k+b & l+c\\
+	m+d & n+e & o+f\\
+	p+g & q+h & r+i 
+	\end{pmatrix} &= \Nmat + \Mmat &&  \text{Por definición de +}
+\end{align*}
+\begin{center}
+	$ \therefore + $ es conmutativa en $ \mtt $
+\end{center}
+Proponemos $ \hat{0} = \begin{pmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0 
+\end{pmatrix} $, 
+Sea $ M = \Mmat \in \mtt $\\
+Pd. $ M + \hat{0} = M, \quad i.e $ $ \Mmat + \Ceros = \Mmat $
+\begin{align*}
+	\Mmat + \Ceros & = \begin{pmatrix}
+	a+0 & b+0 & c+0\\
+	d+0 & e+0 & f+0\\
+	g+0 & h+0 & i+0 
+	\end{pmatrix} && \text{Por definición de +}\\
+	\begin{pmatrix}
+	a+0 & b+0 & c+0\\
+	d+0 & e+0 & f+0\\
+	g+0 & h+0 & i+0 
+	\end{pmatrix} & = \Mmat && \text{Porque 0 es neutro ad. en $ \Z $}
+\end{align*}
+\begin{center}
+	$ \therefore \Ceros $ es el neutro aditivo en $ \mtt $
+\end{center}
+Sea $ M = \Mmat \in \mtt $, Por demostrar $$ \Mmat + \hat{M} = \Ceros $$
+Proponemos $ \hat{M} = \begin{pmatrix}
+-a & -b & -c\\
+-d & -e & -f\\
+-g & -h & -i
+\end{pmatrix}  = -M$
+\begin{align*}
+	\Mmat + \begin{pmatrix}
+	-a & -b & -c\\
+	-d & -e & -f\\
+	-g & -h & -i
+	\end{pmatrix} & = \begin{pmatrix}
+	a-a & b-b & c-c\\
+	d-d & e-e & f-f\\
+	g-g & h-h & i-i
+	\end{pmatrix} && \text{Por definición de +}\\
+	\begin{pmatrix}
+	a-a & b-b & c-c\\
+	d-d & e-e & f-f\\
+	g-g & h-h & i-i
+	\end{pmatrix} & = \Ceros &&\text{Pues en $ \Z $ existen inversos aditivos}
+\end{align*}
+\begin{center}
+	$ \therefore \begin{pmatrix}
+	-a & -b & -c\\
+	-d & -e & -f\\
+	-g & -h & -i
+	\end{pmatrix} = -M $ es la inversa aditiva de $ M $
+\end{center}
+Sean $ M, N, P \in \mtt, M = \Mmat, N = \Nmat, P = \Pmat $\\
+Por demostrar $ \Mmat \* \left( \Nmat \* \Pmat \right) = \left( \Mmat \* \Nmat  \right) \* \Pmat $
+\begin{align*}
+	\Mmat \* \left( \Nmat \* \Pmat \right) &=  \Mmat \* \left( 
+	\begin{pmatrix}
+	j\alpha + k \epsilon + l\xi & j\beta + k\eta + l\omega & j\gamma +  k\theta + l\delta\\
+	m\alpha + n\epsilon + o\xi & m\beta + n\eta + o\omega & m\gamma +  n\theta + o\delta\\
+	q\alpha + p\epsilon + r\xi & q\beta + p\eta + r\omega & q\gamma +  p\theta + r\delta\\
+	\end{pmatrix} 
+	\right)\\
+	\Mmat \* \left( 
+	\begin{pmatrix}
+	j\alpha + k \epsilon + l\xi & j\beta + k\eta + l\omega & j\gamma +  k\theta + l\delta\\
+	m\alpha + n\epsilon + o\xi & m\beta + n\eta + o\omega & m\gamma +  n\theta + o\delta\\
+	q\alpha + p\epsilon + r\xi & q\beta + p\eta + r\omega & q\gamma +  p\theta + r\delta\\
+	\end{pmatrix} 
+	\right) & = \begin{pmatrix}
+	j\alpha + k \epsilon + l\xi & j\beta + k\eta + l\omega & j\gamma +  k\theta + l\delta\\
+	m\alpha + n\epsilon + o\xi & m\beta + n\eta + o\omega & m\gamma +  n\theta + o\delta\\
+	q\alpha + p\epsilon + r\xi & q\beta + p\eta + r\omega & q\gamma +  p\theta + r\delta\\
+	\end{pmatrix} 
+\end{align*}
 \end{document}
