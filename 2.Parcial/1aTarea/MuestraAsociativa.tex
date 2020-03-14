@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[letterpaper,margin=0.2cm,vmargin={1.3cm,1.3cm},landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amssymb, amsmath}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{dsfont}
+\usepackage{graphicx}
+
+\begin{document}
+	
+\newcommand{\Z}{\mathds{Z}}
+\renewcommand{\*}{\cdot}
+\newcommand{\mtt}{M_{3x3}(\mathds{Z})}
+\newcommand{\Ceros}{\begin{pmatrix}
+		0 & 0 & 0\\
+		0 & 0 & 0\\
+		0 & 0 & 0 
+\end{pmatrix}}
+
+\newcommand{\Nmat}{\begin{pmatrix}
+		j & k & l\\
+		m & n & o\\
+		q & p & r\\
+\end{pmatrix}}
+
+\newcommand{\Pmat}{\begin{pmatrix}
+		\alpha & \beta & \gamma\\
+		\epsilon & \eta & \theta\\
+		\xi & \omega & \delta
+\end{pmatrix}}
+
+\newcommand{\Mmat}{\begin{pmatrix}
+		a & b & c\\
+		d & e & f\\
+		g & h & i
+\end{pmatrix}}
+ $$\text{Sean } M, N, P \in \mtt, M = \Mmat, N = \Nmat, P = \Pmat $$
+ $$\text{Por demostrar } \Mmat \* \left( \Nmat \* \Pmat \right) = \left( \Mmat \* \Nmat  \right) \* \Pmat $$
+\begin{align*}
+\Mmat \* \left( \Nmat \* \Pmat \right) &=  \Mmat \* 
+\begin{pmatrix}
+j\alpha + k \epsilon + l\xi & j\beta + k\eta + l\omega & j\gamma +  k\theta + l\delta\\
+m\alpha + n\epsilon + o\xi & m\beta + n\eta + o\omega & m\gamma +  n\theta + o\delta\\
+q\alpha + p\epsilon + r\xi & q\beta + p\eta + r\omega & q\gamma +  p\theta + r\delta\\
+\end{pmatrix}
+\end{align*}
+\begin{align*}
+	\begin{pmatrix}
+	a(j\alpha + k \epsilon + l\xi) + b(m\alpha + n\epsilon + o\xi) + c (q\alpha + p\epsilon + r\xi) & a(j\beta + k\eta + l\omega) + b( m\beta + n\eta + o\omega) + c(q\beta + p\eta + r\omega) & a(j\gamma +  k\theta + l\delta ) + b(m\gamma +  n\theta + o\delta) + c (q\gamma +  p\theta + r\delta)\\
+	d(j\alpha + k \epsilon + l\xi) + e(m\alpha + n\epsilon + o\xi) + f(q\alpha + p\epsilon + r\xi) & d(j\beta + k\eta + l\omega) + e( m\beta + n\eta + o\omega) + f(q\beta + p\eta + r\omega) & d(j\gamma +  k\theta + l\delta ) + e(m\gamma +  n\theta + o\delta) + f(q\gamma +  p\theta + r\delta)\\
+	g(j\alpha + k \epsilon + l\xi) + h(m\alpha + n\epsilon + o\xi) + i(q\alpha + p\epsilon + r\xi) & g(j\beta + k\eta + l\omega) + h( m\beta + n\eta + o\omega) + i(q\beta + p\eta + r\omega) & g(j\gamma +  k\theta + l\delta ) + h(m\gamma +  n\theta + o\delta) + i(q\gamma +  p\theta + r\delta)\\
+	\end{pmatrix} &\\
+	\begin{pmatrix}
+	aj\alpha + ak \epsilon + al\xi + bm\alpha + bn\epsilon + bo\xi + cq\alpha + cp\epsilon + cr\xi & aj\beta + ak\eta + al\omega + bm\beta + bn\eta + bo\omega + cq\beta + cp\eta + cr\omega & aj\gamma + ak\theta + al\delta + bm\gamma +  bn\theta + bo\delta + cq\gamma + cp\theta + cr\delta\\
+	dj\alpha + dk \epsilon + dl\xi + em\alpha + en\epsilon + eo\xi + fq\alpha + fp\epsilon + fr\xi & dj\beta + dk\eta + dl\omega + em\beta + en\eta + eo\omega) + fq\beta + fp\eta + fr\omega) & dj\gamma + dk\theta + dl\delta + em\gamma +  en\theta + eo\delta) + fq\gamma + fp\theta + fr\delta\\
+	gj\alpha + gk\epsilon + gl\xi + hm\alpha + hn\epsilon + ho\xi) + iq\alpha + ip\epsilon + ir\xi & gj\beta + gk\eta + gl\omega + hm\beta + hn\eta + ho\omega + iq\beta + ip\eta + ir\omega & gj\gamma +  gk\theta + gl\delta + hm\gamma +  hn\theta + ho\delta + iq\gamma + ip\theta + ir\delta\\
+	\end{pmatrix}^{(1)}
+\end{align*}
+\hrulefill  \text{ }Por otra parte veamos que \hrulefill
+\begin{align*}
+	\left( \Mmat \* \Nmat  \right) \* \Pmat & = \begin{pmatrix}
+	aj + bm + cq & ak + bn + cp & al + bo + cr\\
+	dj + em + fq & dk + en + fp & dl + eo + fr\\
+	gj + hm + iq & gk + hn + ip & gl + ho + ir\\
+	\end{pmatrix} \* \Pmat\\
+\end{align*}
+$$
+	\begin{pmatrix}
+	(aj + bm + cq)\alpha + ( ak + bn + cp)\epsilon + (al + bo + cr)\xi & (aj + bm + cq)\beta + ( ak + bn + cp)\eta + (al + bo + cr)\omega & (aj + bm + cq)\gamma + ( ak + bn + cp)\theta + (al + bo + cr)\delta\\
+	(dj + em + fq)\alpha + (dk + en + fp)\epsilon + (dl + eo + fr)\xi & (dj + em + fq)\beta + (dk + en + fp)\eta + (dl + eo + fr)\omega & (dj + em + fq)\gamma + (dk + en + fp)\theta + (dl + eo + fr)\delta\\
+	(gj + hm + iq)\alpha + (gk + hn + ip)\epsilon + (gl + ho + ir)\xi & (gj + hm + iq)\beta + (gk + hn + ip)\eta + (gl + ho + ir)\omega & (gj + hm + iq)\gamma + (gk + hn + ip)\theta + (gl + ho + ir)\delta
+	\end{pmatrix}
+$$
+\[ = \]
+$$
+	\begin{pmatrix}
+	aj\alpha + bm\alpha + cq\alpha + ak\epsilon + bn\epsilon + cp\epsilon + al\xi + bo\xi + cr\xi & aj\beta + bm\beta + cq\beta + ak\eta + bn\eta + cp\eta + al\omega + bo\omega + cr\omega & aj\gamma + bm\gamma + cq\gamma + ak\theta + bn\theta + cp\theta + al\delta + bo\delta + cr\delta\\
+	dj\alpha + em\alpha + fq\alpha + dk\epsilon + en\epsilon + fp\epsilon + dl\xi + eo\xi + fr\xi & dj\beta + em\beta + fq\beta + dk\eta + en\eta + fp\eta + dl\omega + eo\omega + fr\omega & dj\gamma + em\gamma + fq\gamma + dk\theta + en\theta + fp\theta + dl\delta + eo\delta + fr\delta\\
+	gj\alpha + hm\alpha + iq\alpha + gk\epsilon + hn\epsilon + ip\epsilon + gl\xi + ho\xi + ir\xi & gj\beta + hm\beta + iq\beta + gk\eta + hn\eta + ip\eta + gl\omega + ho\omega + ir\omega & gj\gamma + hm\gamma + iq\gamma + gk\theta + hn\theta + ip\theta + gl\delta + ho\delta + ir\delta
+	\end{pmatrix}^{(2)}
+$$
+Finalmente, notemos que (1) y (2) son iguales pues los coeficientes pertenecen a $ \Z $ y ahí, la suma es conmutativa por lo que 
+
+$$ \Mmat \* \left( \Nmat \* \Pmat \right) = \left( \Mmat \* \Nmat  \right) \* \Pmat $$
+\begin{center}
+	$ \therefore \*$ es asociativo en $ \mtt $
+\end{center}
+
+\end{document}
