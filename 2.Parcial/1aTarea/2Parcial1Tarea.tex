@@ -36,6 +36,12 @@ includefoot]{geometry}
 		0 & 0 & 0 
 \end{pmatrix}}
 
+\newcommand{\Iden}{\begin{pmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1 
+\end{pmatrix}}
+
 \newcommand{\Nmat}{\begin{pmatrix}
 		j & k & l\\
 		m & n & o\\
@@ -375,5 +381,178 @@ Proponemos $ \hat{M} = \begin{pmatrix}
 	\end{pmatrix} = -M $ es la inversa aditiva de $ M $
 \end{center}
 La prueba de Asociatividad para el producto se anexa en una página diferente debido a su dimensión
+\begin{center}
+	$ \therefore \* $ es asociativo en $ \mtt $
+\end{center}
+Proponemos $  \hat{1} = I_3 = \begin{pmatrix}
+	1 & 0 & 0\\
+	0 & 1 & 0\\
+	0 & 0 & 1\\
+\end{pmatrix} $, y sea $ M \in \mtt, M = \Mmat $\\
+Por demostrar: $ \Mmat \* \Iden = \Mmat = \Iden \* \Mmat $
+\begin{align*}
+	\Mmat \* \Iden &= \begin{pmatrix}
+		a + (0)b + (0)c & + (0)a + b + (0)c & (0)a + (0)b + c\\
+		d + (0)e + (0)f & (0)d + e + (0)f & (0)d + (0)e + f\\
+		g + (0)h + (0)i & (0)g + h + (0)i & (0)g + (0)h + i
+	\end{pmatrix}  \text{Por def. de $ \* $}\\
+	\begin{pmatrix}
+	a + (0)b + (0)c & + (0)a + b + (0)c & (0)a + (0)b + c\\
+	d + (0)e + (0)f & (0)d + e + (0)f & (0)d + (0)e + f\\
+	g + (0)h + (0)i & (0)g + h + (0)i & (0)g + (0)h + i
+	\end{pmatrix} & = \Mmat \text{En $ \Z $ el producto de 0 por un elemento es 0 }
+\end{align*}
+Por otra parte veamos
+\begin{align*}
+	\Iden \* \Mmat & = \begin{pmatrix}
+		a(1) + b (0) + c (0) & a(0)+ b(1) + c(0) & a(0) + b(0) + c(1)\\
+		d(1) + e(0) +f(0) & d(0) + e(1) + f(0) & d(0) + e(0) + f(0)\\
+		g(1) + h(0) + i(0) & g(0) + h(1) + i(0) & g(0) + h(0) + i(1)
+	\end{pmatrix}\\
+	\begin{pmatrix}
+	a(1) + b (0) + c (0) & a(0)+ b(1) + c(0) & a(0) + b(0) + c(1)\\
+	d(1) + e(0) +f(0) & d(0) + e(1) + f(0) & d(0) + e(0) + f(0)\\
+	g(1) + h(0) + i(0) & g(0) + h(1) + i(0) & g(0) + h(0) + i(1)
+	\end{pmatrix} & = \Mmat
+\end{align*}
+\begin{center}
+	$ \therefore \Iden $ es la matriz neutra multiplicativa en $ \mtt $
+\end{center}
+ $$\text{Sean } M, N, P \in \mtt, M = \Mmat, N = \Nmat, P = \Pmat $$
+$$\text{Por demostrar } \Mmat \* \left( \Nmat + \Pmat \right) = \Mmat \* \Nmat + \Mmat \* \Pmat $$
 
+\begin{align*}
+\Mmat \* \left( \Nmat + \Pmat \right) &= \Mmat \* \begin{pmatrix}
+j + \alpha & k + \beta & l + \gamma\\
+m + \epsilon & n + \eta & o + \theta\\
+q + \xi & p + \omega & r + \delta
+\end{pmatrix} \
+\end{align*} 
+\centering =
+$$
+\begin{pmatrix}
+a(j + \alpha) + b(m + \epsilon) + c(q + \xi) & a(k + \beta) + b(n + \eta) + c(p + \omega) & a(l + \gamma) + b(o + \theta) + c(r + \delta)\\
+d(j + \alpha) + e(m + \epsilon) + f(q + \xi) & d(k + \beta) + e(n + \eta) + f(p + \omega) & d(l + \gamma) + e(o + \theta) + f(r + \delta)\\
+g(j + \alpha) + h(m + \epsilon) + i(q + \xi) & g(k + \beta) + h(n + \eta) + i(p + \omega) & g(l + \gamma) + h(o + \theta) + i(r + \delta)\\
+\end{pmatrix}
+$$
+\centering =
+$$ 
+\begin{pmatrix}
+aj + a\alpha + bm + b\epsilon + cq + c\xi & ak + a\beta + bn + b\eta + cp + c\omega & al + a\gamma + bo + b\theta + cr + c\delta\\
+dj + d\alpha + em + e\epsilon + fq + f\xi & dk + d\beta + en + e\eta + fp + f\omega & dl + d\gamma + eo + e\theta + fr + f\delta\\
+gj + g\alpha + hm + h\epsilon + iq + i\xi & gk + g\beta + hn + h\eta + ip + i\omega & gl + g\gamma + ho + h\theta + ir + r\delta\\
+\end{pmatrix}
+$$ \centering =
+$$
+\begin{pmatrix}
+aj + bm + cq  & ak + bn + cp  & al + bo + cr \\
+dj + em + fq  & dk + en + fp  & dl + eo + fr \\
+gj + hm + iq  & gk + hn + ip  & gl + ho + ir \\
+\end{pmatrix}
++
+\begin{pmatrix}
+a\alpha + b\epsilon + c\xi & a\beta + b\eta + c\omega & a\gamma + b\theta + c\delta\\
+d\alpha + e\epsilon + f\xi & d\beta + e\eta + f\omega & d\gamma + e\theta + f\delta\\
+g\alpha + h\epsilon + i\xi & g\beta + h\eta + i\omega & g\gamma + h\theta + r\delta\\
+\end{pmatrix}
+$$
+\centering =
+$$
+\Mmat \* \Nmat + \Mmat \* \Pmat 
+$$
+\begin{center}
+	$ \therefore \*$ se cumple (7) en $ \mtt $
+\end{center}
+\newpage
+Sean $ X, Y, Z \in  \mtt, \qquad X = \Nmat, Y = \Pmat, Z = \Mmat $\\
+
+
+Por demostrar: $ (X + Y) \* Z = X\*Z + Y*Z $ i.e. $ \left( \Nmat + \Pmat \right) \* \Mmat = \Nmat \* \Mmat + \Pmat \* \Mmat  $
+\begin{align*}
+\left( \Nmat + \Pmat \right) \* \Mmat &= \begin{pmatrix}
+j + \alpha & k + \beta & l + \gamma\\
+m + \epsilon & n + \eta & o + \theta\\
+q + \xi & p + \omega & r + \delta
+\end{pmatrix}  \* \Mmat
+\end{align*}
+\centering =
+$$
+\begin{pmatrix}
+(j + \alpha)a + (m + \epsilon)b + (q + \xi)c & (k + \beta)a + (n + \eta)b + (p + \omega)c & (l + \gamma)a + (o + \theta)b + (r + \delta)c\\
+(j + \alpha)d + (m + \epsilon)e + (q + \xi)f & (k + \beta)d + (n + \eta)e + (p + \omega)f & (l + \gamma)d + (o + \theta)e + (r + \delta)f\\
+(j + \alpha)g + (m + \epsilon)h + (q + \xi)i & (k + \beta)g + (n + \eta)h + (p + \omega)i & (l + \gamma)g + (o + \theta)h + (r + \delta)i\\
+\end{pmatrix}
+$$
+\centering =
+$$ 
+\begin{pmatrix}
+aj + a\alpha + bm + b\epsilon + cq + c\xi & ak + a\beta + bn + b\eta + cp + c\omega & al + a\gamma + bo + b\theta + cr + c\delta\\
+dj + d\alpha + em + e\epsilon + fq + f\xi & dk + d\beta + en + e\eta + fp + f\omega & dl + d\gamma + eo + e\theta + fr + f\delta\\
+gj + g\alpha + hm + h\epsilon + iq + i\xi & gk + g\beta + hn + h\eta + ip + i\omega & gl + g\gamma + ho + h\theta + ir + r\delta\\
+\end{pmatrix}
+$$ \centering =
+$$
+\begin{pmatrix}
+aj + bm + cq  & ak + bn + cp  & al + bo + cr \\
+dj + em + fq  & dk + en + fp  & dl + eo + fr \\
+gj + hm + iq  & gk + hn + ip  & gl + ho + ir \\
+\end{pmatrix}
++
+\begin{pmatrix}
+a\alpha + b\epsilon + c\xi & a\beta + b\eta + c\omega & a\gamma + b\theta + c\delta\\
+d\alpha + e\epsilon + f\xi & d\beta + e\eta + f\omega & d\gamma + e\theta + f\delta\\
+g\alpha + h\epsilon + i\xi & g\beta + h\eta + i\omega & g\gamma + h\theta + r\delta\\
+\end{pmatrix}
+$$
+\centering =
+$$
+\Nmat \* \Mmat + \Pmat \* \Mmat 
+$$
+\begin{center}
+	$ \therefore $ se cumple (8) en $ \mtt $\\
+	
+	$ \therefore (\mtt, +, \*) $ es un \textbf{Anillo}
+\end{center}
+\begin{definition}
+	Sea $ (\A, +, \*) $ un anillo, decimos que cumple la ley de cancelación del producto si
+	\[ \forall a,b,c \in  \A \qquad a \neq 0, \qquad ab = ac \implies b = c \]
+\end{definition}	
+En nuestro contraejemplo tomemos $ A = \begin{pmatrix}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix},
+B = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}, C = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix} 
+$
+\\Se puede observar que $ A \neq \Ceros $
+\begin{align*}
+	\begin{pmatrix}
+	0 & 0 & 0\\
+	0 & 0 & 0\\
+	0 & 0 & 1
+	\end{pmatrix} \* \begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 0 
+	\end{pmatrix} & = \Ceros =
+	\begin{pmatrix}
+	0 & 0 & 0\\
+	0 & 0 & 0\\
+	0 & 0 & 1
+	\end{pmatrix} \* \begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 0 & 0 \\
+	0 & 0 & 0 
+	\end{pmatrix} 
+\end{align*}
+Y notemos que $ C \neq B, \qquad \therefore $ No se cumple la ley de la cancelación para el producto
 \end{document}
