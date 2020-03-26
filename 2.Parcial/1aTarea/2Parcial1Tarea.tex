@@ -106,20 +106,24 @@ includefoot]{geometry}
 \newtheorem{definition}{Definición}
 
 \begin{document}
-		\begin{titlepage}
-	\begin{center}
-		\textbf{Universidad Nacional Autónoma de México}\\
-		\textbf{Facultad de Ciencias} \\
-		\textit{Álgebra Superior II} \\[1mm]
-		\hrulefill \\
-		\large{$ 2^{do} $ Parcial Tarea 1 }\\
-		Kevin Ariel Merino Peña  317031326\\
-		\today\\
-		\hrulefill \\
-	\end{center}
-	\let\newpage\relax% Avoid following page break
+	\setlength{\unitlength}{1cm}
+	\thispagestyle{empty}
+	\begin{picture}(18,4)
+	\put(-0.5,1.2){\includegraphics[scale=.25]{unam1.png}}
+	\put(15.5,1){\includegraphics[scale=.35]{fciencias1.png}}
+	\end{picture}
 	
-\end{titlepage}
+	\begin{center}
+		\vspace{-134pt}
+		\textbf{\large Álgebra Superior II}\\[0.2cm]
+		\textbf{Tarea 3}\\[0.2cm]
+		Prof. Patricia Pellicer Covarruvias\\[0.2cm]
+		Ayud. Irving Hérnandez Rosas \\ [0.2cm]
+		Kevin Ariel Merino Peña\\
+	\end{center}
+	\vspace{-10pt}
+	\rule{19cm}{0.3mm}
+
 
 \noindent1. Considera una familia $ \A $ de subconjunto no vacíos de $ \N $ tal que \[ \N = \bigcup_{B \in \A} B \] para cada $ n \in \N $, sea el conjunto $ \A_{n}  = \lbrace C \in \A : n\in C \rbrace$ (Observa que este conjunto es no vacío), y define \[ U_n = \bigcap_{C \in \A_n} C \] Es decir, $ U_n $ es la intersección de todos los conjuntos de la familia $ \A $ que tiene al elemento $ n $.\\ Se define la relación $ \ra $ en $ \N $ dada por $ n \ra m $ si y sólo si $ n \in U_m $. Demuestra o da contraejemplo de las siguientes afirmaciones
 \begin{itemize}
