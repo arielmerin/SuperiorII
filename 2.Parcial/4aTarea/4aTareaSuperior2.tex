@@ -12,6 +12,7 @@ includefoot]{geometry}
 \usepackage{subcaption}
 \usepackage{tocloft}
 \usepackage{upgreek}
+%\usepackage{enumitem}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{paralist}
@@ -23,76 +24,48 @@ includefoot]{geometry}
 \input{longdiv.tex}
 \tcbuselibrary{skins,breakable}
 \pagestyle{fancy}
-
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \cfoot{\textbf{Facultad de Ciencias, UNAM}\\ \thepage}
-
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\C}{\mathcal{C}}
 
 \newcommand{\Ceros}{\begin{pmatrix}
-		0 & 0 & 0\\
-		0 & 0 & 0\\
-		0 & 0 & 0 
+		0 & 0 & 0\\	0 & 0 & 0\\	0 & 0 & 0 
 \end{pmatrix}}
 
 \newcommand{\Iden}{\begin{pmatrix}
-		1 & 0 & 0\\
-		0 & 1 & 0\\
-		0 & 0 & 1 
+		1 & 0 & 0\\ 0 & 1 & 0\\	0 & 0 & 1 
 \end{pmatrix}}
 
 \newcommand{\Nmat}{\begin{pmatrix}
-		j & k & l\\
-		m & n & o\\
-		q & p & r\\
+		j & k & l\\	m & n & o\\ q & p & r\\
 \end{pmatrix}}
 
 \newcommand{\Pmat}{\begin{pmatrix}
-		\alpha & \beta & \gamma\\
-		\epsilon & \eta & \theta\\
-		\xi & \omega & \delta
+		\alpha & \beta & \gamma\\ \epsilon & \eta & \theta\\ \xi & \omega & \delta
 \end{pmatrix}}
 
-\newcommand{\Mmat}{\begin{pmatrix}
-		a & b & c\\
-		d & e & f\\
-		g & h & i
+\newcommand{\Mmat}{\begin{pmatrix} a & b & c\\ d & e & f\\ g & h & i
 \end{pmatrix}}
 
 \newcommand{\V}{\mathds{V}}
-
 \newcommand{\W}{\mathds{W}}
-
 \newcommand{\F}{\mathds{F}}
-
 \newcommand{\dsim}{\vartriangle}
-
 \newcommand{\tq}{ \quad \cdot  \backepsilon \cdot \quad }
-
 \newcommand{\ld}{\lim\limits_{x \to 0^{+}}}
-
 \newcommand{\li}{\lim\limits_{x \to 0^{-}}}
-
 \newcommand{\la}{\lim\limits_{x \to a}}
-
 \newcommand{\mtt}{M_{3x3}(\mathds{Z})}
-
 \newcommand{\R}{\mathds{R}}
-
 \newcommand{\ra}{\sim_{\A}}
 \newcommand{\mas}{\oplus}
 \newcommand{\por}{\odot}
-
 \newcommand{\N}{\mathds{N}}
-
 \newcommand{\Z}{\mathds{Z}}
-
 \renewcommand{\*}{\cdot}
-
 \newcommand{\ExiEscuela}{\textbf{Facultad de Ciencias, UNAM}}
-
 
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -155,10 +128,16 @@ d) 65536 y 327680\\
 
 \noindent9. En lo siguientes incisos, escribe $ n $ en base $ a $:\\
 \begin{itemize}
-	\item $ n = $, $ a = $
-	\item $ n = $, $ a = $
-	\item $ n = $, $ a = $
-	\item $ n = $, $ a = $
-	\item $ n = $, $ a = $
+	\item $ n = 1056 $, $ a = 16 $
+	\item $ n = 51 $, $ a = 12 $
+	\item $ n = 1981$, $ a = 8 $
+	\item $ n = 441$, $ a = 5 $
+	\item $ n = 2853116705$, $ a = 11 $
 \end{itemize}
+
+\noindent10. Efectúa las siguientes operaciones:\\
+a) $ 103_4 + 221_4 $\\
+b) $ 1011101_2 + 11101_2 + 10111_2 + 100101_2 $\\
+c) $ (10121_3)(210_3) $\\
+d) $ (445_11)(A01_11) $
 \end{document}
