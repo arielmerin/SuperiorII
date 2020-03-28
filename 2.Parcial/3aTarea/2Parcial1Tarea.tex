@@ -29,6 +29,7 @@ includefoot]{geometry}
 \cfoot{\textbf{Facultad de Ciencias, UNAM}\\ \thepage}
 
 \newcommand{\A}{\mathcal{A}}
+\newcommand{\C}{\mathcal{C}}
 
 \newcommand{\Ceros}{\begin{pmatrix}
 		0 & 0 & 0\\
@@ -80,13 +81,18 @@ includefoot]{geometry}
 
 \newcommand{\R}{\mathds{R}}
 
+\newcommand{\ra}{\sim_{\A}}
+\newcommand{\mas}{\oplus}
+\newcommand{\por}{\odot}
+
+\newcommand{\N}{\mathds{N}}
+
 \newcommand{\Z}{\mathds{Z}}
 
 \renewcommand{\*}{\cdot}
 
 \newcommand{\ExiEscuela}{\textbf{Facultad de Ciencias, UNAM}}
 
-\newtcolorbox{ejercicio}[1]{beamer,colback=white!90!white, colframe=black, title=Ejercicio #1}
 
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -100,20 +106,32 @@ includefoot]{geometry}
 \newtheorem{definition}{Definición}
 
 \begin{document}
-		\begin{titlepage}
-	\begin{center}
-		\textbf{Universidad Nacional Autónoma de México}\\
-		\textbf{Facultad de Ciencias} \\
-		\textit{Álgebra Superior II} \\[1mm]
-		\hrulefill \\
-		\large{$ 2^{do} $ Parcial Tarea 1 }\\
-		Kevin Ariel Merino Peña  317031326\\
-		\today\\
-		\hrulefill \\
-	\end{center}
-	\let\newpage\relax% Avoid following page break
+	\setlength{\unitlength}{1cm}
+	\thispagestyle{empty}
+	\begin{picture}(18,4)
+	\put(-0.5,1.2){\includegraphics[scale=.25]{unam1.png}}
+	\put(15.5,1){\includegraphics[scale=.35]{fciencias1.png}}
+	\end{picture}
 	
-\end{titlepage}
+	\begin{center}
+		\vspace{-134pt}
+		\textbf{\large Álgebra Superior II}\\[0.2cm]
+		\textbf{Tarea 3}\\[0.2cm]
+		Prof. Patricia Pellicer Covarruvias\\[0.2cm]
+		Ayud. Carlos Eduardo García Reyes \\ [0.2cm]
+		Ayud. César Rodrígo Calderón Villegas\\ [0.2cm]
+		Kevin Ariel Merino Peña\\
+	\end{center}
+	\vspace{-10pt}
+	\rule{19cm}{0.3mm}
+
+
+\noindent1. Considera una familia $ \A $ de subconjunto no vacíos de $ \N $ tal que \[ \N = \bigcup_{B \in \A} B \] para cada $ n \in \N $, sea el conjunto $ \A_{n}  = \lbrace C \in \A : n\in C \rbrace$ (Observa que este conjunto es no vacío), y define \[ U_n = \bigcap_{C \in \A_n} C \] Es decir, $ U_n $ es la intersección de todos los conjuntos de la familia $ \A $ que tiene al elemento $ n $.\\ Se define la relación $ \ra $ en $ \N $ dada por $ n \ra m $ si y sólo si $ n \in U_m $. Demuestra o da contraejemplo de las siguientes afirmaciones
+\begin{itemize}
+	\item$ \ra $ es reflexiva;
+	\item$ \ra $ es transitiva;
+	\item$ \ra $ es antisimétrica;
+\end{itemize}
 
 2. Sea $ X $ un conjunto y sea $ \mathcal{A} = \mathcal{P}(X) $ su conjunto potencia. Definimos las operaciones $ + $ y $ \* $ en $ \mathcal{A} $ como 
 \[ B + C = B \vartriangle C \quad \text{y} \quad B \* C = B \cap C \]
@@ -428,7 +446,7 @@ m + \epsilon & n + \eta & o + \theta\\
 q + \xi & p + \omega & r + \delta
 \end{pmatrix} \
 \end{align*} 
-\centering =
+$$ =$$
 $$
 \begin{pmatrix}
 a(j + \alpha) + b(m + \epsilon) + c(q + \xi) & a(k + \beta) + b(n + \eta) + c(p + \omega) & a(l + \gamma) + b(o + \theta) + c(r + \delta)\\
@@ -436,14 +454,15 @@ d(j + \alpha) + e(m + \epsilon) + f(q + \xi) & d(k + \beta) + e(n + \eta) + f(p 
 g(j + \alpha) + h(m + \epsilon) + i(q + \xi) & g(k + \beta) + h(n + \eta) + i(p + \omega) & g(l + \gamma) + h(o + \theta) + i(r + \delta)\\
 \end{pmatrix}
 $$
-\centering =
+$$ =$$
 $$ 
 \begin{pmatrix}
 aj + a\alpha + bm + b\epsilon + cq + c\xi & ak + a\beta + bn + b\eta + cp + c\omega & al + a\gamma + bo + b\theta + cr + c\delta\\
 dj + d\alpha + em + e\epsilon + fq + f\xi & dk + d\beta + en + e\eta + fp + f\omega & dl + d\gamma + eo + e\theta + fr + f\delta\\
 gj + g\alpha + hm + h\epsilon + iq + i\xi & gk + g\beta + hn + h\eta + ip + i\omega & gl + g\gamma + ho + h\theta + ir + r\delta\\
 \end{pmatrix}
-$$ \centering =
+$$ 
+$$ =$$
 $$
 \begin{pmatrix}
 aj + bm + cq  & ak + bn + cp  & al + bo + cr \\
@@ -457,7 +476,7 @@ d\alpha + e\epsilon + f\xi & d\beta + e\eta + f\omega & d\gamma + e\theta + f\de
 g\alpha + h\epsilon + i\xi & g\beta + h\eta + i\omega & g\gamma + h\theta + r\delta\\
 \end{pmatrix}
 $$
-\centering =
+$$ =$$
 $$
 \Mmat \* \Nmat + \Mmat \* \Pmat 
 $$
@@ -476,7 +495,7 @@ m + \epsilon & n + \eta & o + \theta\\
 q + \xi & p + \omega & r + \delta
 \end{pmatrix}  \* \Mmat
 \end{align*}
-\centering =
+$$ =$$
 $$
 \begin{pmatrix}
 (j + \alpha)a + (m + \epsilon)b + (q + \xi)c & (k + \beta)a + (n + \eta)b + (p + \omega)c & (l + \gamma)a + (o + \theta)b + (r + \delta)c\\
@@ -484,14 +503,15 @@ $$
 (j + \alpha)g + (m + \epsilon)h + (q + \xi)i & (k + \beta)g + (n + \eta)h + (p + \omega)i & (l + \gamma)g + (o + \theta)h + (r + \delta)i\\
 \end{pmatrix}
 $$
-\centering =
+$$ =$$
 $$ 
 \begin{pmatrix}
 aj + a\alpha + bm + b\epsilon + cq + c\xi & ak + a\beta + bn + b\eta + cp + c\omega & al + a\gamma + bo + b\theta + cr + c\delta\\
 dj + d\alpha + em + e\epsilon + fq + f\xi & dk + d\beta + en + e\eta + fp + f\omega & dl + d\gamma + eo + e\theta + fr + f\delta\\
 gj + g\alpha + hm + h\epsilon + iq + i\xi & gk + g\beta + hn + h\eta + ip + i\omega & gl + g\gamma + ho + h\theta + ir + r\delta\\
 \end{pmatrix}
-$$ \centering =
+$$ 
+$$ =$$
 $$
 \begin{pmatrix}
 aj + bm + cq  & ak + bn + cp  & al + bo + cr \\
@@ -505,7 +525,7 @@ d\alpha + e\epsilon + f\xi & d\beta + e\eta + f\omega & d\gamma + e\theta + f\de
 g\alpha + h\epsilon + i\xi & g\beta + h\eta + i\omega & g\gamma + h\theta + r\delta\\
 \end{pmatrix}
 $$
-\centering =
+$$ =$$
 $$
 \Nmat \* \Mmat + \Pmat \* \Mmat 
 $$
@@ -555,4 +575,88 @@ $
 	\end{pmatrix} 
 \end{align*}
 Y notemos que $ C \neq B, \qquad \therefore $ No se cumple la ley de la cancelación para el producto
+
+\noindent4.Recuerda el anillo $ (\Z, \mas, \por) $ definido en el problema 4 de la tarea 2. ¿Este anillo es un dominio entero? Demuestra tus afirmaciones.\\
+
+Definimos las operaciones $ \mas, \por $ en $ \Z $ como 
+\begin{equation*}
+	x \mas y = x + y -1\\
+\end{equation*}
+$$ x \por y = x + y - x\* y $$
+
+\noindent5. Sea $ (A, +, \*) $ un anillo cualquiera y sean $ u, v \in A $. ¿Cuáles de las siguientes afirmaciones son verdaderas? Demuestra o da contraejemplo.
+\begin{itemize}
+	\item Si $ u $ u $ v $ son unidades, entonces $ uv $ es unidad.
+	\item Si $ u $ u $ v $ son unidades, entonces $ u + v $ es unidad.
+	\item Si $ u + v $ es unidad, entonces $ u $ es unidad o $ v $ es unidad.
+	\item Si $ u $ es unidad, entonces su inverso aditivo es unidad.
+\end{itemize}
+\newpage
+\noindent 6. Considera el conjunto $ A = \{ a,b,c,d\} $ con operaciones $ \mas $ y $ \por $ definidas como aparece en las siguientes tablas:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c|c|c|c|c}
+		$ \mas $ & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ \hline
+		 \textbf{a} & a & b & c & d \\ \hline
+		 \textbf{b} & b & c & d & a \\ \hline
+		 \textbf{c} & c & d & a & b \\ \hline
+		 \textbf{d} & d & a & b & c \\
+	\end{tabular}
+	\hspace{3cm}
+	\begin{tabular}{c|c|c|c|c}
+		$ \por $ & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ \hline
+		 \textbf{a} & a & a & a & a \\ \hline
+		 \textbf{b} & a & b & c & d \\ \hline
+		 \textbf{c} & a & c & a & c \\ \hline
+		 \textbf{d} & a & d & c & b \\
+	\end{tabular}
+\end{table}
+Se puede probar, pero no es necesario que lo hagas, que $ (A, \mas, \por) $ es un anillo. Responde las siguientes preguntas demostrando todas tus afirmaciones\\
+a) ¿Cuál es el neutro aditivo?\\
+b) ¿Cuál es el neutro multiplicativo?\\
+c) ¿Este anillo es conmutativo?\\
+d) ¿Este anillo es dominio entero?\\
+e) ¿Cuáles son las unidades?\\
+\noindent7. ¿Falso o verdadero? Demuestra o da contraejemplo:\\
+a) $ (\C, \leq) $ es COTO\\
+b) $ (\C, \leq) $ es COBO\\
+\noindent8. Sea $ a = [(a_1, a_2)] \in \C $. Si $ -a $ denota el inverso aditivo de $ a $, muestra que:\\
+a) $ [(1,2)] \* [(a_1,a_2)] =  -a$\\
+b) $ -(-a) = [(a_1,a_2)]$\\
+\noindent9.Sean $ [(a,b)], [(c,d)], [(e,f)], [(g,h)] \in \C $. Demuestra lo siguiente:\\
+a) Si $ [(a, b)] \leq [(1,1)] $ y $ [(c,d)] \leq [( e,f)] $, entonces $ [(a,b)] \* [( e,f )] \leq [(a,b)] \* [(c,d)] $.\\
+b) Si $ [(a, b)] \leq [(c,d)] $ y $ [(e,f)] \leq [( g,h)] $, entonces $ [(a,b)] + [( e,f )] \leq [(c,d)] + [(g,h)] $.\\
+c) Si $ [(1,1)] < [(a, b)] \leq [(c,d)] $ y $ [(1,1)] < [(e,f)] \leq [( g,h)] $, entonces $ [(a,b)] \* [( e,f )] \leq [(c,d)] \* [(g,h)] $.\\
+
+\noindent10.Demuestra que existe una función $ i: \N \rightarrow \C $ que tiene las siguientes propiedades:\\
+a) $ i $ es inyectiva\\
+b) $ i $ preserva la suma $ \left( \forall n,m \in \N: i(n + m) = i(n) + i(m)  \right) $\\
+c) $ i $ preserva el producto $ \left( \forall n,m \in \N: i(n \* m) = i(n) \* i(m)  \right) $\\
+d) $ i $ preserva el orden $ \left( \forall n,m \in \N: n \leq m \Longleftrightarrow i(n) \leq i(m)  \right) $\\
+La función $ i $ muestra que el conjunto $ \C $ contiene una << copia exacta >> del conjunto $ \N $, en el sentido de que las propiedades fundamentales de los números naturales - su aritmética y su orden usual, se transfieren de manera adecuada al conjunto $ \C $.\\
+
+
+\noindent11. Sean $ a,b,c \in \Z $. Demuestre que:
+a)$ | -a| = |a|  $ y $ |a| $,\\
+b) $ |a| \geq 0, $\\
+c) $ |a| = 0$ si y solo si $ a = 0, $\\
+d) $ |ab| = |a||b| $,\\
+e) $ ||b|-|c|| \leq |b-c| $,\\
+f) 2máx$ \{a,b \}  = a + b + |a - b|$\\
+g) 2mín$ \{a,b \}  = a + b - |a - b|$\\
+
+\noindent12.Encuentra el cociente $ q $ y el residuo $ r $  que satisfagan el Algoritmo de la División para escribir $ a = bq + r $, donde $ a $ y $ b $ son los siguientes:\\
+a) $ a = 7392,  $  $ b = -43 $\\
+b) $ a = -7392, $ $ b = -43 $\\
+c) $ a = -37, $ $ b = 3 $\\
+d) $ a = -12, $ $ b = -90 $\\
+e) $ a = -90, $ $ b = -12 $\\
+
+\noindent 13. Sean $ a,b,c,d \in \Z $. Demuestra lo siguiente:\\
+a) Si $ 0|a $ entonces $ a = 0 $\\
+b) Si $ a|b $, entonces $ a|bc $.\\
+c) Si $ a|b $ y $ c|d $, entonces $ ac|bd $\\
+d) Si $ a|b $, entonces $ ac|bc $.\\
+e) Si $ a|b $, entonces $ a|-b, -a |b $ y $ -a | -b $\\
+f) Si $ a|2b $, y $ a | -5b $, entonces $ a|b $.
 \end{document}

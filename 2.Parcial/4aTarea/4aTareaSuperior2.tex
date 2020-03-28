@@ -1,0 +1,143 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amssymb, amsmath}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{dsfont}
+\usepackage[margin=1.3cm,
+vmargin={1.3cm,1.3cm},
+includefoot]{geometry}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{tocloft}
+\usepackage{upgreek}
+%\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{tcolorbox}
+\usepackage{color}
+\usepackage{tikz}
+\input{longdiv.tex}
+\tcbuselibrary{skins,breakable}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{\textbf{Facultad de Ciencias, UNAM}\\ \thepage}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\C}{\mathcal{C}}
+
+\newcommand{\Ceros}{\begin{pmatrix}
+		0 & 0 & 0\\	0 & 0 & 0\\	0 & 0 & 0 
+\end{pmatrix}}
+
+\newcommand{\Iden}{\begin{pmatrix}
+		1 & 0 & 0\\ 0 & 1 & 0\\	0 & 0 & 1 
+\end{pmatrix}}
+
+\newcommand{\Nmat}{\begin{pmatrix}
+		j & k & l\\	m & n & o\\ q & p & r\\
+\end{pmatrix}}
+
+\newcommand{\Pmat}{\begin{pmatrix}
+		\alpha & \beta & \gamma\\ \epsilon & \eta & \theta\\ \xi & \omega & \delta
+\end{pmatrix}}
+
+\newcommand{\Mmat}{\begin{pmatrix} a & b & c\\ d & e & f\\ g & h & i
+\end{pmatrix}}
+
+\newcommand{\V}{\mathds{V}}
+\newcommand{\W}{\mathds{W}}
+\newcommand{\F}{\mathds{F}}
+\newcommand{\dsim}{\vartriangle}
+\newcommand{\tq}{ \quad \cdot  \backepsilon \cdot \quad }
+\newcommand{\ld}{\lim\limits_{x \to 0^{+}}}
+\newcommand{\li}{\lim\limits_{x \to 0^{-}}}
+\newcommand{\la}{\lim\limits_{x \to a}}
+\newcommand{\mtt}{M_{3x3}(\mathds{Z})}
+\newcommand{\R}{\mathds{R}}
+\newcommand{\ra}{\sim_{\A}}
+\newcommand{\mas}{\oplus}
+\newcommand{\por}{\odot}
+\newcommand{\N}{\mathds{N}}
+\newcommand{\Z}{\mathds{Z}}
+\renewcommand{\*}{\cdot}
+\newcommand{\ExiEscuela}{\textbf{Facultad de Ciencias, UNAM}}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\newtheorem{theorem}{Teorema}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+
+\begin{document}
+	\setlength{\unitlength}{1cm}
+	\thispagestyle{empty}
+	\begin{picture}(18,4)
+	\put(-0.5,1.2){\includegraphics[scale=.25]{unam1.png}}
+	\put(15.5,1){\includegraphics[scale=.35]{fciencias1.png}}
+	\end{picture}
+	
+	\begin{center}
+		\vspace{-134pt}
+		\textbf{\large Álgebra Superior II}\\[0.2cm]
+		\textbf{Tarea 4}\\[0.2cm]
+		Prof. Patricia Pellicer Covarruvias\\[0.2cm]
+		Ayud. Carlos Eduardo García Reyes \\ [0.2cm]
+		Ayud. César Rodrígo Calderón Villegas\\ [0.2cm]
+		Kevin Ariel Merino Peña\\
+	\end{center}
+	\vspace{-10pt}
+	\rule{19cm}{0.3mm}
+
+
+\noindent1. Sea $ k \in \N $. Demuestra que el conjunto de todas las potencias de $ k $ (es decir, el conjunto $ P(k) = \{ k^n : n \in \N \cup \{ 0\} \} $)) junto con la relación de divisibilidad, es un conjunto totalmente ordenado.\\
+
+\noindent2. Sea $ n \in \N $. Demuestra que si se tienen $ n $ enteros consecutivos \[ a, a+1, a+2, \cdots, a + (n -1),  \] entonces alguno de ellos es divisible por $ n $.\\
+
+\noindent3.Sean $ a,b \in \Z $ y sea $ d = mcd(a,b) $. Muestra que si $ m,n \in \Z$ son tales que $ dm = a $  y $ dn = b $, entonces $ mcd(m,n) = 1 $.\\
+
+\noindent4. Con la misma notación del ejercicio anterior, ¿es cierto que $ mdc(m,b) = 1 $?. Demuestra tus afirmaciones.\\
+
+\noindent5. Demuestra  que para toda $ n \in \N $ :\\
+a) $ 8^n | (4n)! $\\
+b) $ 15 | 2^{4n}-1 $.\\
+
+\noindent6. Demuestra que un número entero es divisible por 4 si y solo si sus últimos dos dígitos, forman un numero divisible por 4\\
+b) Demuestra que un numero entero es divisible por 8 si y solo si sus últimos tres dígitos, forman un numero divisible por 8\\
+
+\noindent7.Sean $ a,b,c,d \in Z $. Demuestra lo siguiente:\\
+a) $ mcd(a,b) = 1 $ si y solo si $ mcd(a+b,ab) = 1 $;\\
+b) si $ mcd(b,c) = 1 $ y $ d|b $, entonces $ mcd(d,c) = 1 $;\\
+c) si $ mcd(a,b) = 1 $ y $ c|a+b $, entonces $ mcd(a,c) = 1 $ y $ mcd(b,c) = 1 $;\\
+d) si $ mdc(b,c) = 1, \quad d|b $ y $ d|ac $, entonces $ d|a $\\
+
+\noindent8. Usa el algoritmo de Euclides para determinar el máximo común divisor de las siguientes parejas de enteros, y exprésalo como combinación lineal de estos.\\
+a) 30 y 42.\\
+b) -512 y 1000.\\
+c) -1024 y -2024\\
+d) 65536 y 327680\\
+
+\noindent9. En lo siguientes incisos, escribe $ n $ en base $ a $:\\
+\begin{itemize}
+	\item $ n = 1056 $, $ a = 16 $
+	\item $ n = 51 $, $ a = 12 $
+	\item $ n = 1981$, $ a = 8 $
+	\item $ n = 441$, $ a = 5 $
+	\item $ n = 2853116705$, $ a = 11 $
+\end{itemize}
+
+\noindent10. Efectúa las siguientes operaciones:\\
+a) $ 103_4 + 221_4 $\\
+b) $ 1011101_2 + 11101_2 + 10111_2 + 100101_2 $\\
+c) $ (10121_3)(210_3) $\\
+d) $ (445_11)(A01_11) $
+\end{document}
